@@ -1,0 +1,34 @@
+1、SpringBoot是什么？
+	是一个基于约定由于配置理念的，用于简化开发和配置，并可以让程序以jar包运行的的java框架
+2、SpringBoot有哪些核心功能？
+	1、自动配置
+	2、提供starter功能，简化配置
+	3、提供内置tomcat、jetty等容器，可以让程序以jar包的形式运行
+	4、提供生产就绪功能
+3、SpringBoot有哪些常用注解？
+	1、@SpringBootApplication
+		用户SpringBoot程序主类上使用，等同于3个注解：@SpringBootConfiguration、@EnableAutoConfiguration和@ComponentScan
+	2、@RestController
+		用于标注控制器，等同于@Controller、@ResponseBody
+	3、@Serice
+		用于标注业务层
+	4、@ResponseBody
+		返回json数据，用于从后台获取json数据
+	。。。。。。
+4、SprigBoot有哪几获取配置信息的方式？
+	1、@value
+	。。。。。。
+5、SpringBoot2.x想比1.x升级了哪些方面？
+	1、JDK版本升级了，最低支持1.8
+	2、支持HTTP2
+	3、增加了许多配置
+	4、升级了第三方类库
+		Spring5
+		tomcat8.5
+	。。。。。。
+6、如何处理和应对SpringBoot中安全方面的问题？
+	1、使用最新版SpringBoot
+	2、使用https
+	3、启用CSRF保护
+	4、使用内容安全策略防止XXS攻击
+
