@@ -31,4 +31,5 @@
 	2、使用https
 	3、启用CSRF保护
 	4、使用内容安全策略防止XXS攻击
-
+7、SpringBoot提供了哪些Starter？
+	1、spring-boot-starter-web
