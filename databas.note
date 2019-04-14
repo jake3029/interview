@@ -13,3 +13,9 @@ sql优化：
 		8、尽量避免在where中进行null判断、表达式操作、函数操作和！= > < (会放弃索引)
 		9、常用的查询字段建立索引
 		10、尽量使用数据类型而非字符类型
+union和union all 的区别？
+    union：表连接后会去掉重复的记录，内部必须有相同的列，同时进行默认的排序
+    unionall：包括重复行，并不排序
+如何使用执行计划？
+    实例：EXPLAIN SELECT * FROM SC sc LEFT JOIN Student s ON sc.`SId` = s.`SId` WHERE s.`Sname` = '张三'
+
