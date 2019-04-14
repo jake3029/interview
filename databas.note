@@ -18,4 +18,12 @@ union和union all 的区别？
     unionall：包括重复行，并不排序
 如何使用执行计划？
     实例：EXPLAIN SELECT * FROM SC sc LEFT JOIN Student s ON sc.`SId` = s.`SId` WHERE s.`Sname` = '张三'
+如何对千万级大表的进行优化？
+	1、优化sql和索引（根据业务优化）
+	2、使用redis（2/8原则）
+	3、读写分离
+	4、分区表——需要针对重写sql
+	5、垂直拆分
+	6、水平拆分
+	7、引擎更换为MyISAM
 
