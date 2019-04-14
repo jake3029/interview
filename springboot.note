@@ -33,3 +33,21 @@
 	4、使用内容安全策略防止XXS攻击
 7、SpringBoot提供了哪些Starter？
 	1、spring-boot-starter-web
+8、如何加载SpringBoot上的更改？
+    1、devtools：使用两个类加载器
+9、能否替换嵌入的tomcat
+  在springboot-starter-web中移除spring-boot-starter-tomcat依赖项， 新添加spring-boot-starter-jetty
+10、springboot怎么添加mybatis
+  启动类上添加@MapperScan("com.neogj.shop.mapper")，在方法上添加 @Insert、@Select等注解
+11、怎么添加Mysql
+  1、添加依赖
+  2、在配置文件配置用户名密码等
+12、如何使用配置文件通过 Spring Boot 配置特定环境的配置？
+  创建不同环境的profile文件：application-test.properties  application-test.properties
+  1、在application.properties中添加spring.profiles.active=test
+  2、在 VM 参数中使用 Dspring.profiles.active=prod
+13、怎么创建定时
+  1、在Spring Boot的主类中加入@EnableScheduling注解，启用定时任务的配置
+  2、创建定时任务实现类
+  3、在任务实现类上添加@component
+  4、在方法上添加@Scheduled
