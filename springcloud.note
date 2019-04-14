@@ -24,17 +24,10 @@ springcloud有些核心功能？
         1、日志平台
         2、监控平台
         3、容器平台（容器调度和服务编排）
-
     SpringCloud、dubbo选型？
-
         1、背景
-
         2、源码维护力度
-
         3、架构完整度
-
         4、文档质量
-
         总结：SpringCloud像品牌电脑，Dubbo像是组装机。
-
     下一代微服务架构ServiceMesh
