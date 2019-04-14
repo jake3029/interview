@@ -1,28 +1,31 @@
 各类型基本操作命令：
 	String
-		添加 			set key value
-		获取 			get key value
-		删除 			del key value
-		设置失效时间 		expire key 10
-		递增 			incr key 
-		递减 			decr key
+		添加 									set key value
+		获取 									get key value
+		删除 									del key value
+		设置失效时间 								expire key 10
+		递增 									incr key 
+		递减 									decr key
+		添加（只有在key不存在存在的时候才能设置值，
+			SET NOT EXISTS）						setnx key value
+		添加并设置过期时间						setex key 20  value 
 	Hash
-		添加 			hset key filed1 value1 filed2 value2 
-		获取 			hget key filed 
-		删除属性 		hdel key filed
-		批量添加 		hmset key filed1 value1 filed2  value2
-		获取所有的列和值 hgetall key
+		添加 									hset key filed1 value1 filed2 value2 
+		获取 									hget key filed 
+		删除属性 								hdel key filed
+		批量添加 								hmset key filed1 value1 filed2  value2
+		获取所有的列和值 						hgetall key
 	List
-		添加 			lpush key value
-		添加 			rpush key value
-		删除 			lpop key value
-		删除 			rpop key value
+		添加 									lpush key value
+		添加 									rpush key value
+		删除 									lpop key value
+		删除 									rpop key value
 	Set
-		添加 			sadd key element1 element2
-		删除 			srem key element1 element2
+		添加 									sadd key element1 element2
+		删除 									srem key element1 element2
 各种数据的应用场景：
-	String：session同步、访问数统计、缓存
-	Hash：映射表结构、人员信息等
-	List：阻塞队列
-	Set：兴趣/喜好分析
-	SortedSet：排行榜系统
+	String：										session同步、访问数统计、缓存
+	Hash：										映射表结构、人员信息等
+	List：										阻塞队列
+	Set：										兴趣/喜好分析
+	SortedSet：									排行榜系统
