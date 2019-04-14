@@ -1,0 +1,24 @@
+1、说说SprigMvc的流程？
+    用户发送请求》核心控制器DispatcherServlet》处理器映射器HandlerMapping》处理器适配器HandlerAdapter》
+    处理器Handler》视图解析器ViewrResolver》View
+2、SpringMvc如何处理异常？
+    1、抛给Sprig框架
+    2、自定义异常
+3、Post和Get乱码如何处理？
+     1、Post乱码：添加过滤器
+     2、Get乱码：tomcat配置文件、对参数进行重新编码
+4、SpringMvc常用注解有哪些？
+    @Controller、@RestController、@ResponseBody、@RequestBody、@RequestMapping
+5、SpringMvc如何进行转发和重定向？
+    return "forwart:aa.do";
+    return "redirect:http://www.baidu.com"
+6、SpringMvc如何与ajax交互？
+   在方法上使用@ResponseBody注解
+7、SpringMvc的返回值有几种？
+   1、String
+   2、ModelAndView
+8、SpringMvc是单例模式吗？有什么问题？如何解决？
+   是单例模式
+   有线程安全问题
+   不要使用同步，会严重影响性能
+   解决方法：不要在控制器里写字段就可以了
