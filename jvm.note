@@ -1,0 +1,26 @@
+1、介绍下java内存区域
+    java堆：存放实例对象
+        分为：新生代（Eden、Survivor1、Survivor2）、年老代和永久代
+    java栈：
+        存放方法进出口、局部变量、操作数栈
+    本地方法栈：
+        执行本地方法
+    程序计数器（PC寄存器）：
+        当前线程执行的字节码行号指示器
+    方法区：
+        存放类信息
+2、java对象创建的过程
+    1、类的加载检查
+    2、分配内存
+    3、初始化
+    4、设置对象头
+    5、执行init方法
+3、说一下String对象和常量池
+    String的两种创建方式
+        String str1 = "abcd";//从字符串常量池中拿，自动装箱也是从常量池里拿
+        String str2 = new String("abcd");//新创建
+        String str3 = "str" + "ing";//常量池中的对象
+        String str4 = str1 + str2; //在堆上创建的新的对象
+    Java 基本类型的包装类的大部分都实现了常量池技术
+        Byte、Short、Integer、Long、Character、Boolean；这5种包装类默认创建了数值 [-128，127] 的相应类型的缓存数据，但是超出此范围仍然会去创建新的对象。
+        Float、Double 并没有实现常量池技术
