@@ -23,7 +23,18 @@
 	Set
 		添加 									sadd key element1 element2
 		删除 									srem key element1 element2
+		取交集									sinter key key 
+		取并集									sunion key key
+		取差集									sdiff key key 
+	SortedSet
+		添加   									zadd key score member
+		删除           							zrem key member
+		计算分数									zscore key member
+		从小到大排序								zrange key 0 10
+		增加分数									zincrby key 30 member
+
 各种数据的应用场景：
+
 	String：									session同步、访问数统计、缓存
 	Hash：										映射表结构、人员信息等
 	List：										阻塞队列
