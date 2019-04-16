@@ -22,3 +22,15 @@
    有线程安全问题
    不要使用同步，会严重影响性能
    解决方法：不要在控制器里写字段就可以了
+9、SpringMvc的常用注解有哪些？
+     @Controller
+     @RequestBody
+     @ResponseBody
+     @ModelAttribute
+     @PathVariable
+     @MatrixVariable
+     @RequestHeader
+     @RequestMapping
+     @GetMapping
+     @PostMapping
+     @ResponseEntity
