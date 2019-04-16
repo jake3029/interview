@@ -18,6 +18,7 @@
    4、AOP代理模式
    5、Listener观察者模式
    6、Facede门面模式
+   7、适配器模式，Hand而Adapter
 5、Spring支持的几种bean的作用域
     1、singleton：默认，每个容器中只有一个bean的实例，单例的模式由BeanFactory自身来维护。
     2、prototype：为每一个bean请求提供一个实例。
