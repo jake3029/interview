@@ -18,6 +18,7 @@ springcloud有些核心功能？
 	2、分为服务端和客户端
 	2、和zookeeper比较eureka没有选举leader的过程
 	3、eureka有客户端缓存功能
+	4、基于定时任务的心跳
     2、Feign声明式Resful调用
 	1、声明式的Resful客户端
 	2、使远程调用像本地调用一样方便
