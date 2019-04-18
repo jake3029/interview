@@ -51,3 +51,13 @@
   2、创建定时任务实现类
   3、在任务实现类上添加@component
   4、在方法上添加@Scheduled
+14、springboot2 有什么新特性？
+	1、最低支持jdk1.8
+	2、最低支持tomcat8.5
+	3、最低支持Spring5
+	4、最低支持Hibernate5.2
+	5、最低Thymeleaf3
+	6、最低支持Flyway5
+	7、加入了webflux，web应用的解决方案不在唯一
+	。。。。。。。
+15、
