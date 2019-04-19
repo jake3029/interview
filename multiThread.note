@@ -52,10 +52,46 @@
         ArrayBlockingQueue
         PriorityBlockingQueue
     并发工具
-      CountDownLatch计数器闭锁
-        线程同步工具
-      Semaphore信号量
-        用于：模拟出稳定的并发量
-        一个能阻塞线程且能控制统一时间请求的并发量的工具
-      CyclicBarrier线程互相等待
-        可以让一组线程相互等待，当每个线程都准备好之后，所有线程才继续执行的工具类
+        Semaphore信号量
+            实现：一个计数器、一个等待队列、三个原子性方法（init、down、up）
+            用途：
+                1、互斥锁
+                
+            说明：java中主要使用管程模型，不太使用信号量模型
+            缺点：一旦程序出现问题（比如异常关闭）就有可能形成永久占用
+
+        writeReadLock读写锁：ReentrantReadWriteLock
+            适用场景：读多写少
+                可以实现缓存：
+            基本原则：
+                1、允许多个线程同时读共享变量
+                2、只允许一个线程写共享变量
+                3、如果一个线程正在写操作，则禁止线程多共享变量
+            性能：
+                性能优于互斥锁，因为他可以允许同时多个线程读共享变量
+            特点：
+                1、writeReadLock不支持锁的升级，只能降级
+                2、读锁和写锁都实现了java.utilconcurent.locks.Lock接口，写锁支持变量，读锁不支持变量
+                2、多个线程读的时候，写操作会被阻塞
+
+        StempedLock改进的读写锁
+            jdk1.8 引入
+            模式：
+                写锁（和WriteReadLock写锁是差不多的）
+                悲观读锁
+                乐观读（是无锁的），使用版本号实现
+            特点：
+                1、写锁和悲观读锁会返回一个stamp，然后解锁的时候，需要传入这个stamp
+                2、乐观读，允许一个线程获取写锁，也就是说不是所有的写操作都被阻塞
+                3、不支持可重入
+                4、使用过程中不要调用Interrupt操作，如果必须使用，可以用readLockInterruptibly和、writeLockInterruptibly
+                5、支持锁的升级和降级
+            性能：
+                1、读多写少的简单的应用场景，性能比WriteReadLock好
+                2、
+        CountDownLatch计数器闭锁
+            线程同步工具
+            是一个计数器，需要线程等待时使用
+            一个能阻塞线程且能控制统一时间请求的并发量的工具
+        CyclicBarrier线程互相等待
+            可以让一组线程相互等待，当每个线程都准备好之后，所有线程才继续执行的工具类
