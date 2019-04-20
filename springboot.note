@@ -4,7 +4,7 @@
 	1、自动配置
 	2、提供starter功能，简化配置
 	3、提供内置tomcat、jetty等容器，可以让程序以jar包的形式运行
-	4、提供生产就绪功能
+	4、提供生产就绪功能actuator
 3、SpringBoot有哪些常用注解？
 	1、@SpringBootApplication
 		用户SpringBoot程序主类上使用，等同于3个注解：@SpringBootConfiguration、@EnableAutoConfiguration和@ComponentScan
