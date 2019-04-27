@@ -80,3 +80,14 @@ SpringCloud、dubbo选型？
     4、文档质量
     总结：SpringCloud像品牌电脑，Dubbo像是组装机。
 下一代微服务架构ServiceMesh
+
+
+开发环境方面：
+	windows环境
+		start /min java -jar user-service.jar --server.port=8711;
+	linux环境
+		start.sh
+			java -jar user-service.jar --server.port=8711 &
+		stop.sh
+			kill -9 ` ps -ef|grep java |grep eureka|awk 'NR=1{print $2}' `;
+

@@ -1,11 +1,11 @@
 7、优化
-	MySql优化主要从3个方面
+	MySql优化主要从4个方面
 	1、查询语句的优化
         1、减少IO次数
         2、降低CPU计算
         主要内容：
             1、避免使用select *
-            2、使用where 代替having (having在查询结果出来之后就行过滤)
+            2、使用where 代替having (having在查询结果出来之后进行过滤)
             3、尽量减少like使用，会走全表扫描
             4、尽量使用join，避免使用子查询
             5、使用EXISTS代替IN、使用NOT EXISTS代替NO IN （后者会走全表扫描）
@@ -14,7 +14,7 @@
             8、尽量避免在where中进行null判断、表达式操作、函数操作和！= > < (会放弃索引)
             9、常用的查询字段建立索引
             10、尽量使用数据类型而非字符类型
-            11、是
+            11、 
 	2、优化数据库结构
 		1、将字段很多的表按照表中字段的使用频率分解成多个表
 		2、增加中间表（将原来联合查询的结果放到中间表中）。
@@ -40,11 +40,6 @@
 			1、使用查询缓存区
 			2、。。。。。
 	4、操作系统优化
-union和union all 的区别？
-    union：表连接后会去掉重复的记录，内部必须有相同的列，同时进行默认的排序
-    unionall：包括重复行，并不排序
-如何使用执行计划？
-    实例：EXPLAIN SELECT * FROM SC sc LEFT JOIN Student s ON sc.`SId` = s.`SId` WHERE s.`Sname` = '张三'
 如何对千万级大表的进行优化？
 	1、优化sql和索引（根据业务优化）
 	2、使用redis（2/8原则）
@@ -96,13 +91,6 @@ union和union all 的区别？
       innodb
         5.5.5版本后默认
       memory
-5、日志系统
-  	redo log
-    		innodb独有
-  	binlog
-	    mysql一直有
-	    service层的
-	    追加写
 6、事务
   ACID
     原子性
@@ -152,5 +140,19 @@ union和union all 的区别？
             不可重复读：
             串行化：
     持久性：事务提交完成后，即使数据库奔溃，数据也不会丢失
-
-
+union和union all 的区别？
+    union：表连接后会去掉重复的记录，内部必须有相同的列，同时进行默认的排序
+    unionall：包括重复行，并不排序
+5、日志系统
+    redo log
+        innodb独有
+    binlog
+      mysql一直有
+      service层的
+      追加写
+如何使用执行计划？
+    实例：EXPLAIN SELECT * FROM SC sc LEFT JOIN Student s ON sc.`SId` = s.`SId` WHERE s.`Sname` = '张三'
+drop， delete truncate的区别？
+  drop：数据和结构一起删除
+  delete：只删除数据
+  truncate：删除不留日志
