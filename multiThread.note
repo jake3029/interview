@@ -1,3 +1,8 @@
+7、CompletableFuture
+    1、runAsync（没有返回值）、supplyAsync（有返回值）
+    2、thenAccept（没有返回值）、thenApply（有返回值）、thenRun
+    3、thenApplyAsync、thenAcceptAsync、thenRunAsync（以另一个线程执行）
+    4、exceptionally（处理异常）
 5、线程有几种状态？
 	创建（new Thread ,新建了一个线程）
 	就绪（调用了start方法，但是还没有获取到cpu使用权）
