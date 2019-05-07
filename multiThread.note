@@ -1,3 +1,32 @@
+1、
+    并发容器
+        concurrentMap
+            1、使用了分段锁，
+            2、使用了segment数组
+            3、每一个数组元素是一个Segment数组,一个Segment数组维护一个HashEntry数组
+            4、默认16个线程并发执行
+        concurrentLinkedQueue（无界队列）
+        LinkedBlockingQueue(有界)
+    并发工具
+        计数器
+            CoundDownlatch（闭锁）
+                场景：模拟真正并发请求，测试
+            CyclicBarrier（工具栅栏）
+
+        锁
+            ReadWriteLock
+            StempedLock
+    线程池
+        Executors
+            newFixedThreadPool
+            newSingleTheadPool
+            newCachedThreadPool
+            newScheduledThreadPool
+    并发框架
+        forkJoin
+        CompletableFuture
+
+
 7、CompletableFuture
     1、runAsync（没有返回值）、supplyAsync（有返回值）
     2、thenAccept（没有返回值）、thenApply（有返回值）、thenRun
