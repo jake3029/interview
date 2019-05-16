@@ -76,3 +76,6 @@ redis中key的过期方案有哪些？
 
 reids如何安全消费？
 	rpoplpush list1 list2 这个命令就行
+redis集群模式下，如何将一个key存放到指定的slot中？来优化性能
+	hash_tag，如果键内容包含{和} ，计算槽的有效部分是括号内的内容，否则采用键的全部内容。
+       
