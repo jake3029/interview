@@ -1,6 +1,8 @@
 1、mybatis分页是怎么做的？
 	1、mybatis使用RowBounds对象进行分页操作，是针对ResultSet结果集执行内存分页。可以在Sql中直接写带有物理分页的参数完成物理分页的功能。
 	2、使用PageHelper插件
+	commit by gaojin
 2、如何执行批量插入
+    commit by gaojin
 	sessionFactory.openSession(ExecutorType.BATCH,true)
 	目前使用Spring-Batch
